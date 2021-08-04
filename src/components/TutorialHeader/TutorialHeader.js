@@ -13,6 +13,9 @@ import {
   SideNavItems,
   HeaderSideNavItems,
 } from 'carbon-components-react';
+
+import { Link } from 'react-router-dom';
+
 import {
   AppSwitcher20,
   Notification20,
@@ -29,7 +32,7 @@ const TutorialHeader = () => (
           onClick={onClickSideNavExpand}
           isActive={isSideNavExpanded}
         />
-        <HeaderName href="/" prefix="IBM">
+        <HeaderName element={Link} to="/" prefix="IBM">
           Carbon Tutorial
         </HeaderName>
         <HeaderNavigation aria-label="Carbon Tutorial">
@@ -41,7 +44,9 @@ const TutorialHeader = () => (
           isPersistent={false}>
           <SideNavItems>
             <HeaderSideNavItems>
-              <HeaderMenuItem href="/repos">Repositories</HeaderMenuItem>
+              <HeaderMenuItem element={Link} to="/repos">
+                Repositories
+              </HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>
         </SideNav>
